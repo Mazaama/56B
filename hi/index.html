@@ -237,6 +237,200 @@
         <img src="img/Footer_food_img.png" alt="">
         <p class="pra">Copyrights 2018 by Wahlburgers. All Rights Reserved, Website by <a href="#">KDS CODER</a></p>
     </footer>
+    <Style>
+        /* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header, .del, .food_chart, .main_bx, .combo_bx, footer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo_ul {
+    display: flex;
+    align-items: center;
+}
+
+.logo_ul a img {
+    max-width: 100px;
+}
+
+.logo_ul ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo_ul ul li a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.contact_select {
+    display: flex;
+    list-style: none;
+}
+
+.contact_select li {
+    margin: 0 10px;
+}
+
+/* Responsive Section */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content, .img_bx {
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 3rem;
+}
+
+.spicy_icon img, .ing_icon img {
+    max-width: 50px;
+    margin: 0 5px;
+}
+
+.order_rate a {
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.order_rate .price {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.food_slider img, .images img {
+    max-width: 100px;
+    margin: 5px;
+}
+
+/* Delivery and Franchise Sections */
+.del, .combo_bx {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.del .cont, .combo_bx .cont {
+    flex: 1 1 45%;
+}
+
+.del img, .combo_bx img {
+    flex: 1 1 45%;
+    max-width: 100%;
+}
+
+/* Food Chart */
+.food_chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.food_bx {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.food_bx img {
+    max-width: 100%;
+}
+
+/* Main Box */
+.main_bx {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main_bx img {
+    max-width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+footer .cont {
+    margin: 20px 0;
+}
+
+footer img {
+    max-width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .logo_ul ul, .contact_select {
+        display: none;
+    }
+    .logo_ul {
+        justify-content: space-between;
+    }
+    .content, .img_bx {
+        flex: 1 1 100%;
+    }
+    .del, .combo_bx {
+        flex-direction: column;
+    }
+    .food_chart, .food_chart2 {
+        flex-direction: column;
+    }
+    .food_bx {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+
+        </style>
     <script src="app.js"></script>
 </body>
 </html>
