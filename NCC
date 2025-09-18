@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ruwais Camp — Best Camp Experience</title>
+  <style>
+    :root{--accent:#0b6e4f;--accent2:#f39c12;--bg:#f6f8fb;--card:#fff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg,var(--accent),#0b8a63); color:#fff; padding:40px 20px; text-align:center}
+    header h1{font-size:34px;margin:0 0 10px}
+    header p{font-size:18px;margin:0;max-width:800px;margin-inline:auto}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{margin-top:20px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    nav a{color:#fff;text-decoration:none;background:rgba(255,255,255,0.15);padding:8px 14px;border-radius:6px;transition:0.2s}
+    nav a:hover{background:var(--accent2);color:#fff}
+
+    .section{margin:40px 0}
+    .card{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+    h2{margin:0 0 14px}
+    .lead{color:#555;font-size:18px;margin-bottom:12px}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:18px}
+    .feature{background:#fff;border-radius:10px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+    .feature h3{margin:0 0 6px;color:var(--accent)}
+
+    /* complaint portal */
+    form input,form textarea,form select{width:100%;padding:10px;margin:6px 0 12px;border:1px solid #ddd;border-radius:8px}
+    button.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.btn:hover{background:var(--accent2)}
+    .muted{color:#666;font-size:14px}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+    .gallery div{height:120px;background:linear-gradient(180deg,#e9eef3,#f6f8fb);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#444}
+
+    footer{padding:30px 0;text-align:center;color:#777;font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www.nccauh.ae/images/footer_logo1.png" alt="Girl in a jacket" width="150" height="60" style="display: block; margin-left: auto; margin-right: auto;">
+    <h1>🌟 Welcome to NCC Camp — UAE’s Premier Living Experience 🌟</h1>
+    <p>We don’t just provide accommodation — we create a vibrant, safe, and engaging community where employees feel at home. Discover why Ruwais Camp is the <strong>best camp in the UAE</strong>, with world-class facilities, recreation, and transparent digital systems.</p>
+    <nav>
+      <a href="#facilities">Facilities</a>
+      <a href="#digital">Digital Systems</a>
+      <a href="#complaint">Complaint Portal</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="facilities" class="section">
+      <h2>🏠 Facilities & Services</h2>
+      <p class="lead">Designed for comfort, safety, and engagement.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Accommodation</h3>
+          <p>Modern rooms with AC, personal lockers, daily cleaning, and laundry support.</p>
+        </div>
+        <div class="feature">
+          <h3>Catering</h3>
+          <p>Diverse menus, fresh fruits, salad bars, hydration stations, and food feedback systems.</p>
+        </div>
+        <div class="feature">
+          <h3>Health & Safety</h3>
+          <p>On-site clinic, fire safety drills, safety signage, and emergency evacuation planning.</p>
+        </div>
+        <div class="feature">
+          <h3>Recreation</h3>
+          <p>Sports grounds, gym, Wi-Fi lounges, TV rooms, and weekly cultural programs.</p>
+        </div>
+        <div class="feature">
+          <h3>Sustainability</h3>
+          <p>Solar water heating, LED lighting, waste segregation, and green landscaping.</p>
+        </div>
+        <div class="feature">
+          <h3>Transport</h3>
+          <p>Scheduled buses with GPS tracking, dedicated parking for cars and bicycles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="digital" class="section">
+      <h2>💻 Smart Digital Systems</h2>
+      <p class="lead">Transparency and efficiency through technology.</p>
+      <ul>
+        <li>Camp Website/App with room allocation, attendance, and transport schedules.</li>
+        <li>Complaint Portal with trackable IDs and resolution updates.</li>
+        <li>Digital notice boards & WhatsApp groups for instant communication.</li>
+        <li>Social media management to showcase our camp as the best in the UAE.</li>
+      </ul>
+    </section>
+
+    <section id="complaint" class="section">
+      <h2>📢 Complaint & Feedback Portal</h2>
+      <p class="lead">Submit and track issues transparently with instant ticket IDs.</p>
+      <form id="ticketForm" onsubmit="return submitTicket(event)">
+        <input id="name" placeholder="Your Name" required />
+        <select id="type">
+          <option>Accommodation</option>
+          <option>Catering</option>
+          <option>Transport</option>
+          <option>Medical</option>
+          <option>Other</option>
+        </select>
+        <textarea id="desc" rows="3" placeholder="Describe the issue" required></textarea>
+        <button class="btn">Submit Complaint</button>
+        <div id="ticketResult"></div>
+      </form>
+      <h3>My Tickets</h3>
+      <div id="ticketsList" class="muted">No tickets yet.</div>
+    </section>
+
+    <section id="events" class="section">
+      <h2>🎬 Events & Movie Nights</h2>
+      <p class="lead">We organize regular cultural events and weekend movie nights for relaxation and bonding.</p>
+      <form id="eventForm" onsubmit="return submitEvent(event)">
+        <input id="ename" placeholder="Your Name" required />
+        <select id="movie">
+          <option>Action Movie</option>
+          <option>Comedy Night</option>
+          <option>Sports Screening</option>
+          <option>Bollywood Special</option>
+          <option>Hollywood Blockbuster</option>
+        </select>
+        <button class="btn">Confirm Availability</button>
+        <div id="eventResult"></div>
+      </form>
+      <div id="eventList" class="muted" style="margin-top:12px">No confirmations yet.</div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>📸 Camp Life Gallery</h2>
+      <div class="gallery">
+        <div>Accommodation</div>
+        <div>Dining</div>
+        <div>Sports</div>
+        <div>Medical</div>
+        <div>Events</div>
+        <div>Transport</div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>📞 Contact Us</h2>
+      <p><strong>Camp Manager:</strong> Hitesh Mandal</p>
+      <p><strong>Email:</strong> <a href="mailto:hitesh@example.com">hitesh@example.com</a></p>
+      <p><strong>Social Media:</strong> Instagram • LinkedIn • YouTube</p>
+    </section>
+  </main>
+
+  <footer>
+    © Ruwais Camp — Demo • Built by Hitesh Mandal • "Creating UAE’s Best Camp Experience"
+  </footer>
+
+  <script>
+    const STORAGE_KEY = 'ruwaiscamp_tickets_v2';
+    const EVENT_KEY = 'ruwaiscamp_events_v1';
+
+    function generateId(){return 'RC-' + Date.now().toString(36).slice(-6).toUpperCase()}
+    function load(key){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
+    function save(key,data){localStorage.setItem(key,JSON.stringify(data))}
+
+    function renderTickets(){
+      const tickets = load(STORAGE_KEY);
+      const list = document.getElementById('ticketsList');
+      if(!tickets.length){list.innerHTML='<div class="muted">No tickets yet.</div>';return}
+      list.innerHTML = tickets.map(t=>`<div style="padding:6px;border-bottom:1px solid #eee"><strong>${t.id}</strong> [${t.type}] — ${t.desc} <em class='muted'>(${t.status})</em></div>`).join('');
+    }
+    function submitTicket(e){
+      e.preventDefault();
+      const id=generateId();
+      const name=document.getElementById('name').value;
+      const type=document.getElementById('type').value;
+      const desc=document.getElementById('desc').value;
+      const tickets=load(STORAGE_KEY);
+      tickets.unshift({id,name,type,desc,status:'Open'});
+      save(STORAGE_KEY,tickets);
+      document.getElementById('ticketResult').innerHTML=`<div style='color:green'>Complaint submitted! Ticket ID: <strong>${id}</strong></div>`;
+      e.target.reset();renderTickets();
+      return false;
+    }
+
+    function renderEvents(){
+      const ev=load(EVENT_KEY);
+      const list=document.getElementById('eventList');
+      if(!ev.length){list.innerHTML='No confirmations yet.';return}
+      list.innerHTML=ev.map(e=>`<div style='padding:6px;border-bottom:1px solid #eee'>${e.name} confirmed for <strong>${e.movie}</strong></div>`).join('');
+    }
+    function submitEvent(e){
+      e.preventDefault();
+      const name=document.getElementById('ename').value;
+      const movie=document.getElementById('movie').value;
+      const ev=load(EVENT_KEY);
+      ev.unshift({name,movie});
+      save(EVENT_KEY,ev);
+      document.getElementById('eventResult').innerHTML=`<div style='color:blue'>Thank you, ${name}! Your seat for <strong>${movie}</strong> is confirmed.</div>`;
+      e.target.reset();renderEvents();
+      return false;
+    }
+
+    renderTickets();
+    renderEvents();
+  </script>
+</body>
+</html>
